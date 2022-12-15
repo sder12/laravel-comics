@@ -1,13 +1,22 @@
 //Layout
 header {
-    .container {
-        // Debug
-        @include bg-container(white);
-
-        .wrapper {
-            @include wrapper(0em, $paddingWrapper);
-        }
+    .container-topbar {
+        @include bg-container($primary-color);
+        color: white;
     }
+
+    .container-header {
+        @include bg-container(white);
+    }
+
+    .wrapper {
+        @include wrapper(0em, $paddingWrapper);
+    }
+}
+
+.topbar {
+    font-size: .6rem;
+    font-weight: 600;
 }
 
 //Content
@@ -23,16 +32,13 @@ header {
 
     //MENU NAV
     &__navigation ul {
-        height: $header-height;
-        @include flex(row, flex-start, center);
-        gap: 2em;
+        @include flex(row, center, stretch);
+        gap: 1.8em;
+        padding: 0;
+        margin: 0;
 
 
         li {
-            height: $header-height;
-            @include flex(row, center, center);
-            border-bottom: 4px solid white;
-
             a {
                 font-size: .8rem;
                 font-weight: 600;
@@ -50,19 +56,16 @@ header {
             }
 
             //Active page underline
-            &.active-border {
-                border-bottom: 4px solid $primary-color;
-            }
+            // &.active-border {
+            //     border-bottom: 4px solid $primary-color;
+            // }
         }
-
-
     }
 
     &__search {
         height: $header-height;
-        @include flex(row, center, center);
+        line-height: $header-height;
         font-size: .8rem;
         font-weight: 600;
-        border-bottom: 4px solid rgb(255, 255, 255);
     }
 }
