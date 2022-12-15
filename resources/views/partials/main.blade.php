@@ -1,4 +1,4 @@
-<main>
+
     {{-- Banner --}}
     <div class="banner">
         <span class="d-none">banner</span>
@@ -41,4 +41,3 @@
         </div>
     </div>
 
-</main>

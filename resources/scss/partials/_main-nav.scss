@@ -1,0 +1,45 @@
+//Layout
+.container-main-nav {
+    @include bg-container($primary-color);
+
+    .wrapper {
+        @include wrapper(0, $paddingWrapper);
+        color: white;
+    }
+
+
+    //Content
+    .nav-products {
+        @include flex(row, space-around, center);
+
+
+        //IMG + TXT
+        .product {
+            @include flex(row, center, center);
+            padding: 1em 1em;
+
+            a {
+                @include flex(row, center, center);
+            }
+
+            &:hover span {
+                border-bottom: 2px solid white;
+            }
+
+
+            // IMAGE
+            &__image {
+                width: 45px;
+                padding-right: 1em;
+            }
+
+            // TEXT
+            &__text {
+                text-transform: uppercase;
+                font-size: .8rem;
+            }
+
+
+        }
+    }
+}
