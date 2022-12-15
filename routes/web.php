@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $data = config('comics');
+    $links = config('comicslink');
     // dd($data);
-    return view('home', compact('data'));
+    // dd($links);
+    return view('home', compact('data', 'links'));
 })->name('home');

@@ -11,6 +11,7 @@
     //Content
     .nav-products {
         @include flex(row, space-around, center);
+        margin: 0;
 
 
         //IMG + TXT

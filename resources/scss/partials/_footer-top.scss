@@ -1,0 +1,62 @@
+.container-footer-top {
+    @include bg-container(lightGrey);
+    background-image: url('../img/footer-bg.jpg');
+
+    .wrapper {
+        @include wrapper(0, $paddingWrapper);
+    }
+
+    //Content
+    .mt-2 {
+        margin-top: 2em
+    }
+
+    .footer {
+        @include flex(row, space-between, center);
+        height: $footer-top-height;
+        color: white;
+
+        // LEFT links
+        &__links {
+            @include flex(row, flex-start, flex-start);
+            gap: 4em;
+
+            h6 {
+                padding-bottom: .8em;
+                text-transform: uppercase;
+
+            }
+
+            ul {
+                padding: 0;
+                margin: 0;
+            }
+
+            li {
+                padding-bottom: .3rem;
+                font-size: .9rem;
+
+                a {
+                    color: $footer-icon-color;
+                    font-weight: 400;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        //RIGHT img
+        &__image {
+            @include flex (row, center, center);
+            height: $footer-top-height;
+            overflow: hidden;
+
+            img {
+                width: calc($footer-top-height + 100px);
+            }
+        }
+
+    }
+}

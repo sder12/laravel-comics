@@ -1,0 +1,45 @@
+// Layout
+.container-footer-bottom {
+    @include bg-container($footer-color);
+    min-height: $footer-bottom-height;
+
+    .wrapper {
+        @include wrapper(2em, $paddingWrapper);
+    }
+
+    .footer {
+        @include flex(row, space-between, center);
+        text-transform: uppercase;
+        font-weight: 600;
+
+        //LEFT sign up
+        &__signup {
+            border: 2px solid $primary-color;
+            padding: 1em 1em;
+            cursor: pointer;
+
+            a {
+                color: white;
+            }
+
+            &:hover {
+                background-color: darken($primary-color, 30%);
+            }
+        }
+
+        //RIGHT follow us
+        &__social ul {
+            @include flex(row, flex-end, center);
+            gap: 1.2em;
+
+            span {
+                color: $primary-color;
+                font-size: 1.2rem;
+            }
+
+            a:hover img {
+                filter: brightness(180%);
+            }
+        }
+    }
+}
