@@ -13,11 +13,22 @@
                     <h4>current series</h4>
                 </div>
                 
-                {{-- CARDS 6x2 --}}
-                <div class="cards-wrapper">
-                    {{-- <MainCard v-for="(card, index) in cardsList" :key="index" :cardThumb="card.thumb"
-                        :cardSeries="card.series" :cardPrice="card.price" :cardType="card.type" /> --}}
-                </div>
+                {{-- CARDS 6x2 --}}   
+                <div class="cards-wrapper">       
+                        @foreach ($data as $card)
+                      
+                        <div class="card-wrapper">
+                            <div class="card-img">
+                                <img src="{{$card['thumb']}}" alt="{{$card['title']}}>
+                                <span class="card-price"> {{ $card['price'] }}</span>
+                            </div>
+                            <div class="card-subtitle">
+                                <h4>{{ $card['title'] }}</h4>
+                            </div>
+                        </div>
+                            
+                        @endforeach
+                    </div >
                 
                 {{-- LOAD MORE --}}
                 <div class="cards-button">

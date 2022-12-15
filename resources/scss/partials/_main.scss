@@ -67,3 +67,61 @@
     }
 
 }
+
+
+.card-wrapper {
+    width: calc(100% / 6);
+    @include flex(column, flex-start, center);
+    margin-top: 2em;
+    cursor: pointer;
+
+    &:hover .card-img img {
+        opacity: .5;
+    }
+}
+
+// CARD IMAGE
+.card-img {
+    width: 10em;
+    height: 10em;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    //Dynamic class based on the publication type
+    &.graphic {
+        border-bottom: 3px solid fuchsia;
+    }
+
+    &.comics {
+        border-bottom: 3px solid $primary-color;
+    }
+
+    &.else-type {
+        border-bottom: 3px solid white;
+    }
+
+    //Card-price
+    .card-price {
+        font-size: .8rem;
+        background-color: black;
+        color: white;
+        padding: .3em .3em;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+//CARD SUBTITLE
+.card-subtitle {
+    align-self: flex-start;
+    text-transform: uppercase;
+    font-size: .9rem;
+    padding: 1em 1em;
+}
